@@ -19,7 +19,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class WanderingPlushieTrader extends WanderingTrader implements GeoEntity {
     public static final Int2ObjectMap<VillagerTrades.ItemListing[]> TRADES = toIntMap(
-            ImmutableMap.of(1, PlushieStore.plushieBlocks.stream().filter(registryObject -> registryObject.get().defaultBlockState().is(PlushieTags.ACTIVE_PLAYER_PLUSHIES)).map(blockRegistryObject -> new VillagerTrades.ItemsForEmeralds(blockRegistryObject.get(), 5, 1, 1, 1)).toArray(VillagerTrades.ItemListing[]::new),
+            ImmutableMap.of(1, PlushieStore.plushieBlocks.stream().map(blockRegistryObject -> new VillagerTrades.ItemsForEmeralds(blockRegistryObject.get(), 5, 1, 1, 1)).toArray(VillagerTrades.ItemListing[]::new),
                     2, PlushieStore.playerBlocksCommon.stream().filter(registryObject -> registryObject.get().defaultBlockState().is(PlushieTags.ACTIVE_PLAYER_PLUSHIES)).map(blockRegistryObject -> new VillagerTrades.ItemsForEmeralds(blockRegistryObject.get(), 10, 1, 1, 1)).toArray(VillagerTrades.ItemListing[]::new),
                     3, PlushieStore.playerBlocksRare.stream().filter(registryObject -> registryObject.get().defaultBlockState().is(PlushieTags.ACTIVE_PLAYER_PLUSHIES)).map(blockRegistryObject -> new VillagerTrades.ItemsForEmeralds(blockRegistryObject.get(), 15, 1, 1, 1)).toArray(VillagerTrades.ItemListing[]::new),
                     4, PlushieStore.playerBlocksEpic.stream().filter(registryObject -> registryObject.get().defaultBlockState().is(PlushieTags.ACTIVE_PLAYER_PLUSHIES)).map(blockRegistryObject -> new VillagerTrades.ItemsForEmeralds(blockRegistryObject.get(), 20, 1, 1, 1)).toArray(VillagerTrades.ItemListing[]::new)
