@@ -46,6 +46,8 @@ legacyForge {
 }
 
 sourceSets.main.resources.srcDir '../Common/src/generated/resources'
+processResources.duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+tasks.named('sourcesJar') { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
 
